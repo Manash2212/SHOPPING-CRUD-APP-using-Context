@@ -7,7 +7,7 @@ const ProductProvider = ({ children }) => {
   // Product State
   const [products, setProducts] = useState([]);
 
-  // fetch API
+  // fetch Product from API
   useEffect(() => {
     const fetchProduct = async () => {
       const data = await fetch("https://fakestoreapi.com/products");
@@ -18,7 +18,7 @@ const ProductProvider = ({ children }) => {
     fetchProduct();
   }, []);
   return (
-    <ProductContext.Provider value={products}>
+    <ProductContext.Provider value={{ products }}>
       {children}
     </ProductContext.Provider>
   );

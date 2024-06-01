@@ -1,0 +1,32 @@
+ THIS IS REACT SHOPPING CART PROJECT, WHERE CRUD FUNCTIONALITIES PRESENT USEING CONTEXT. 🌟🛒
+
+ 1.Install the React Application and configured the tailwaindcss.
+ 2.Changes in tailwaind.config.js file. 
+ 3.In Src foleder Create a Component folder and to store some components
+       ↪ Component
+         ↪ Header.js
+         ↪ Footer.js
+         ↪ Hero.js
+         ↪ Hero.js
+         ↪ Product.js
+         ↪ Sidebar.js
+         ↪ Sidebar.js
+         ↪ Cartitem.js
+
+ 4.After that In Src foleder Create another folder --> pages
+    ↪ Pages
+       ↪ Home.js
+       ↪ ProductDetails.js
+
+5.Then In Src foleder Create another folder --> contexts
+    ↪ contexts
+     ↪ CartContext.js
+     ↪ ProductContext.js
+     ↪ SidebarContext.js
+
+6.Then a IMG folder to store some images 
+7.In ProductContext page change the Component name to ProductProvider then  create a context name ProductContext.
+8.And Wrap the JSX to <ProductContext> <Home/></ProductContext> Like that.
+9.And also in index.js wrap the whole thing into <ProductProvider> Like that</ProductProvider>.
+10.In ProductContext page create a useState variable called Products and then fetch the Products data from FakeStoreAPI and pass the result to setProducts.
+11.

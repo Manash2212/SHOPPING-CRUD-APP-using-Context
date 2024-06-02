@@ -4,12 +4,13 @@ import { FaPlus } from "react-icons/fa6";
 import { FaEye } from "react-icons/fa";
 
 const Product = ({ products }) => {
-  console.log(products);
+  // console.log(products);
   // Destructure the product
   const { id, title, image, category, price } = products;
+  const convertedPrice = Math.round(price * 80);
   return (
     <div>
-      <div className="border border-[#e4e4e4] h-[300px] mb-4 relative overflow-hidden group transition cursor-pointer ">
+      <div className="border border-[#e4e4e4] h-[300px] mb-2 relative overflow-hidden group transition cursor-pointer ">
         <div className="w-full h-full flex justify-center items-center ">
           {/* image */}
           <div className="w-[200px] mx-auto flex justify-center items-center xl:p-8">
@@ -33,7 +34,14 @@ const Product = ({ products }) => {
           </Link>
         </div>
       </div>
-      <div>2</div>
+      {/* Category & title & Price */}
+      <div>
+        <div className="text-sm capitalize text-gray-500 mb-1">{category}</div>
+        <Link to={`/product/${id}`}>
+          <h2 className="font-semibold mb-1">{title}</h2>
+        </Link>
+        <div> ₹{convertedPrice}</div>
+      </div>
     </div>
   );
 };

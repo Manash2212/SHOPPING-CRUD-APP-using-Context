@@ -12,8 +12,9 @@ const ProductProvider = ({ children }) => {
     const fetchProduct = async () => {
       const data = await fetch("https://fakestoreapi.com/products");
       const json = await data.json();
-      console.log(json);
+      // console.log(json);
       setProducts(json);
+      // https://api.escuelajs.co/api/v1/products
     };
     fetchProduct();
   }, []);

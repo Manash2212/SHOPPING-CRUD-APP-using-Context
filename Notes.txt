@@ -28,5 +28,14 @@
 7.In ProductContext page change the Component name to ProductProvider then  create a context name ProductContext.
 8.And Wrap the JSX to <ProductContext> <Home/></ProductContext> Like that.
 9.And also in index.js wrap the whole thing into <ProductProvider> Like that</ProductProvider>.
-10.In ProductContext page create a useState variable called Products and then fetch the Products data from FakeStoreAPI and pass the result to setProducts.
-11.
+10.In ProductContext page create a useState variable called Products and then fetch the Products data 
+   from FakeStoreAPI and pass the result to setProducts.
+11.Then Wrap the JSX into ProductContext.Provider and inside that pass the {Children} and also 
+   pass the value Product, 
+   Ex:- <ProductContext.Provider value={products}>{children}</ProductContext.Provider>
+12.Come back to Home Page,In Home page, get the products value by the use of useContext and
+   pass the value ProductContext in useContext.
+13.then Filterd the products, filtering bec, we want to Show only men's Clothing and Women's Clothing products.
+14.After thats i map on the filterdsProducts and Pass the <Product> Component and 
+   also pass the filterdsProducts data as a Prop.
+15.In Product

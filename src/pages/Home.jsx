@@ -1,9 +1,6 @@
 import React, { useContext } from "react";
 // import components
 import Product from "../components/Product";
-import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footer";
 
 // imoprt the Productcontext
 import { ProductContext } from "../contexts/ProductContext";
@@ -18,7 +15,7 @@ const Home = () => {
       item.category === "men's clothing" || item.category === "women's clothing"
     );
   });
-  console.log(filteredProducts);
+  // console.log(filteredProducts);
   return (
     <div>
       <section className="py-16">

@@ -14,7 +14,6 @@ const ProductProvider = ({ children }) => {
       const json = await data.json();
       // console.log(json);
       setProducts(json);
-      // https://api.escuelajs.co/api/v1/products
     };
     fetchProduct();
   }, []);

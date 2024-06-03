@@ -33,9 +33,35 @@
 11.Then Wrap the JSX into ProductContext.Provider and inside that pass the {Children} and also 
    pass the value Product, 
    Ex:- <ProductContext.Provider value={products}>{children}</ProductContext.Provider>
-12.Come back to Home Page,In Home page, get the products value by the use of useContext and
+12.Then come Back to index.js file wrap the whole jsx into <ProductProvider>.
+13.Come back to Home Page,In Home page, get the products value by the use of useContext and
    pass the value ProductContext in useContext.
-13.then Filterd the products, filtering bec, we want to Show only men's Clothing and Women's Clothing products.
-14.After thats i map on the filterdsProducts and Pass the <Product> Component and 
+14.then Filterd the products, filtering bec, we want to Show only men's Clothing and Women's Clothing products.
+15.After thats i map on the filterdsProducts and Pass the <Product> Component and 
    also pass the filterdsProducts data as a Prop.
-15.In Product
+16.In Product Component, Destructure the filterdsProducts and pass it to the Component to make a Card.
+
+17.Then ComeBack to the <SidebarContext> component, inside that create SidebarContext using createContext and 
+   then create a sidebar state [isOpen, setIsOpen ] and then create a handleClose button.
+18.Then Wrap the JSX into SidebarContext.Provider and inside that pass the {Children} and also 
+   pass the 3 values isOpen, setIsOpen and handleClose function.
+   Ex:-<SidebarContext.Provider value={{ isOpen, setIsOpen, handleClose }}>
+      {children}
+    </SidebarContext.Provider>
+19.Then come Back to index.js file wrap the whole jsx into <SidebarProvider>.
+20.Come back to sidebar.js Component inside that get the values isOpen and handleClose using useContext and 
+   inside the useContext pass the SidebarContext, then styling the Sidebar page.
+21.Implement the sidebar Open/Close functionality apply the handleClose function into the arraW icon.
+22.Then Jump to CartContext and change the Component name to CartProvider then  create a context name CartContext.
+23.And wrap the JSX into <CartContext.Provider>{clildren}</CartContext.Provider
+24.Then come Back to index.js file wrap the whole jsx into <CartProvider>
+25.Come back to CartContext.js Component inside that create a state variable name : cart, setCart.
+26.Create a function --> addToCart which will be applied on Plus icon.
+27.Inside the addToCrt function create a variable --> newItem where spread the Product Object and
+   along with that add a new Property --> amounnt:1
+27.then add the find functionality in cart that if the is already in the cart or not, 
+   if present then create functionality to add the item in Cartitem after that pass the addToCart function at the CartContext value.
+28.come back to Product Page and Destructure the addToCart function by the useContext. 
+   and pass it to the Plus button.
+29.then come back to Sidebar Page and Destructure the cart state by the useContext, 
+   and apply the map method on the CartItem and  

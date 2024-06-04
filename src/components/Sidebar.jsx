@@ -11,7 +11,7 @@ import { CartContext } from "../contexts/CartContext";
 const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
   // import the cart from cartContext
-  const { cart } = useContext(CartContext);
+  const { cart, clearAllCart, itemAmount, total } = useContext(CartContext);
   return (
     <div
       className={` ${
@@ -19,7 +19,9 @@ const Sidebar = () => {
       }  w-full bg-white fixed top-0 h-full shadow-2xl md:w-[35vw] xl:max-w-[27vw] transition-all duration-300 z-20 px-4 lg:px-[30px] `}
     >
       <div className="flex items-center justify-between py-4 border-b  ">
-        <div className="uppercase text-sm font-semibold">Shopping bag (0)</div>
+        <div className="uppercase text-sm font-semibold">
+          Shopping bag ({itemAmount})
+        </div>
         {/* Icons */}
         <div
           className="cursor-pointer font-bold flex items-center justify-center w-12 h-12 "
@@ -28,10 +30,26 @@ const Sidebar = () => {
           <IoMdArrowForward className="text-xl " />
         </div>
       </div>
-      <div className="">
+      <div className=" flex flex-col gap-y-2 h-[400px] lg:h-[500px] overflow-y-auto overflow-x-hidden border-b ">
         {cart.map((item, i) => {
           return <CartItem item={item} key={i} />;
         })}
+      </div>
+      {/* total Price and Clear cart */}
+      <div className="flex flex-col gap-y-2 py-4 my4'">
+        <div className="flex justify-between items-center w-full  ">
+          {/* total */}
+          <div className="uppercase font-semibold text-primary">
+            <span className="mr-2">Total:</span>₹{total}
+          </div>
+          {/* Clear Cart */}
+          <div
+            onClick={clearAllCart}
+            className="w-10 h-10 py-2 bg-red-600 flex items-center justify-center text-xl text-white cursor-pointer"
+          >
+            <FiTrash2 />
+          </div>
+        </div>
       </div>
     </div>
   );

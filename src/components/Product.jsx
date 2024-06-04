@@ -13,7 +13,7 @@ const Product = ({ products }) => {
   const convertedPrice = Math.round(price * 80);
   return (
     <div>
-      <div className="border border-[#e4e4e4] h-[300px] mb-2 relative overflow-hidden group transition cursor-pointer ">
+      <div className="border border-[#e4e4e4] h-[300px] mb-2 relative overflow-hidden group transition cursor-pointer my-10">
         <div className="w-full h-full flex justify-center items-center ">
           {/* image */}
           <div className="w-[200px] mx-auto flex justify-center items-center xl:p-8">

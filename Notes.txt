@@ -64,4 +64,17 @@
 28.come back to Product Page and Destructure the addToCart function by the useContext. 
    and pass it to the Plus button.
 29.then come back to Sidebar Page and Destructure the cart state by the useContext, 
-   and apply the map method on the CartItem and  
+   and apply the map method on the CartItem.
+30.In CartItem page, Destructure the products Properties, write the jsx 
+   for --> Image, title, remove icon, quantity, price, increse and decrese amount , final Price.
+31.Now in CartContext page before we Implement the addToCart functionality and we will be Implement
+   remove from the cart, amount incresed, amount decresed after complete the functionality i will be pass through the CartContext value.
+32.Then ComeBack to CartItem page import the values from CartContext through the useContext 
+   and pass it to the icon as a eventListner.
+33.Then ComeBack to Sidebar page Create a section for display the total price and Clear the Cart.
+34.Then ComeBack to CartContext make the functionality for the total Price and Clear Cart function.
+35.For the clearCart functionality make clearCart function and pass it to the CartContext value, 
+   after that for the total Price , create itemAmount, setItemAmount state, then using useEffeft create the functionality for totalPrice and pass it to teh CartContext value.
+36.Then comeBack to Header Design the Header and display the itemAmount which is imported from the CartContext.
+    as well as import the Logo of Header.
+37.

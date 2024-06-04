@@ -27,7 +27,7 @@ const Header = () => {
   return (
     <header
       className={`${
-        isActive ? " backdrop-blur-lg  py-4 shadow-md" : " bg-gray-100 py-4 "
+        isActive ? " bg-gray-100  py-4 shadow-md" : " bg-none py-4 "
       } fixed w-full z-10 transition-all`}
     >
       <div className="container mx-auto flex items-center justify-between h-full">

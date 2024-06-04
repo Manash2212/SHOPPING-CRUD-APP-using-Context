@@ -77,4 +77,9 @@
    after that for the total Price , create itemAmount, setItemAmount state, then using useEffeft create the functionality for totalPrice and pass it to teh CartContext value.
 36.Then comeBack to Header Design the Header and display the itemAmount which is imported from the CartContext.
     as well as import the Logo of Header.
-37.
+
+37.Now it's time to style the Hero.js page  
+
+38.So ComeBack to Home page and pass the Hero component, then go back to Hero page 
+   and style them to make more Elegente.
+ 

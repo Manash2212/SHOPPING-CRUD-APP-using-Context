@@ -7,6 +7,7 @@ import { FiTrash2 } from "react-icons/fi";
 import CartItem from "./CartItem";
 import { SidebarContext } from "../contexts/SidebarContext";
 import { CartContext } from "../contexts/CartContext";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
@@ -40,7 +41,7 @@ const Sidebar = () => {
         <div className="flex justify-between items-center w-full  ">
           {/* total */}
           <div className="uppercase font-semibold text-primary">
-            <span className="mr-2">Total:</span>₹{total}
+            <span className="mr-2">Total:</span>₹{Math.round(total)}
           </div>
           {/* Clear Cart */}
           <div
@@ -50,6 +51,18 @@ const Sidebar = () => {
             <FiTrash2 />
           </div>
         </div>
+        <Link
+          to={`/`}
+          className="w-full bg-gray-300 flex justify-center items-center py-2 font-medium"
+        >
+          View Cart
+        </Link>
+        <Link
+          to={`/`}
+          className="w-full bg-primary text-white flex justify-center items-center py-2 font-medium"
+        >
+          Chcekout
+        </Link>
       </div>
     </div>
   );

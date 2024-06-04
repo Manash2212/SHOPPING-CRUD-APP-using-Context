@@ -82,4 +82,5 @@
 
 38.So ComeBack to Home page and pass the Hero component, then go back to Hero page 
    and style them to make more Elegente.
+39.now in Sidebar component add two section for view cart and Checkout 
  

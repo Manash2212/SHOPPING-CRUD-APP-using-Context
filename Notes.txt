@@ -83,4 +83,16 @@
 38.So ComeBack to Home page and pass the Hero component, then go back to Hero page 
    and style them to make more Elegente.
 39.now in Sidebar component add two section for view cart and Checkout 
+
+40.Now it's time to build ProductDetails Page.
+41.First - in ProductDetails page get the product id using useParams, then get the product Object from ProductContext using
+   useContext, then get the addToCart functionality from the CartContext using useContext.
+42.then find the product using the Product id. then create a functionality for //if product not found
+43.then Destructure the products Properties, then style the ProductDetails page and pass the Properties.
+
+44.Now style the Footer page.
+45.Create a the Footer page and style the Footer.
+46.After that in come to Sidebar page and make some changes, 
+   if cart there is no cart item then it will show "Your Cart is Empty"
+
  

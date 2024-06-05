@@ -8,7 +8,7 @@ import { CartContext } from "../contexts/CartContext";
 // import Link
 import { Link } from "react-router-dom";
 // import Logo
-import Logo from "../img/logo.svg";
+import Logo from "../img/logo2.png";
 
 const Header = () => {
   // header state
@@ -33,8 +33,8 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between h-full">
         {/* logo */}
         <Link to={"/"}>
-          <div>
-            <img className="w-[40px]" src={Logo} alt="logo" />
+          <div className="">
+            <img className="w-[50px] scale-125 " src={Logo} alt="logo" />
           </div>
         </Link>
         {/* cart */}

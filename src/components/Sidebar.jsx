@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 // import icons
 import { IoMdArrowForward } from "react-icons/io";
 import { FiTrash2 } from "react-icons/fi";
+import { BsCart4 } from "react-icons/bs";
 
 import CartItem from "./CartItem";
 import { SidebarContext } from "../contexts/SidebarContext";
@@ -13,6 +14,7 @@ const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
   // import the cart from cartContext
   const { cart, clearAllCart, itemAmount, total } = useContext(CartContext);
+  console.log(cart.length);
   return (
     <div
       className={` ${
@@ -31,39 +33,52 @@ const Sidebar = () => {
           <IoMdArrowForward className="text-xl " />
         </div>
       </div>
-      <div className=" flex flex-col gap-y-2 h-[400px] lg:h-[500px] overflow-y-auto overflow-x-hidden border-b ">
-        {cart.map((item, i) => {
-          return <CartItem item={item} key={i} />;
-        })}
-      </div>
-      {/* total Price and Clear cart */}
-      <div className="flex flex-col gap-y-2 py-4 my4'">
-        <div className="flex justify-between items-center w-full  ">
-          {/* total */}
-          <div className="uppercase font-semibold text-primary">
-            <span className="mr-2">Total:</span>₹{Math.round(total)}
+      {cart.length >= 1 ? (
+        <>
+          <div className=" flex flex-col gap-y-2 h-[400px] lg:h-[500px] overflow-y-auto overflow-x-hidden border-b ">
+            {cart.map((item, i) => {
+              return <CartItem item={item} key={i} />;
+            })}
           </div>
-          {/* Clear Cart */}
-          <div
-            onClick={clearAllCart}
-            className="w-10 h-10 py-2 bg-red-600 flex items-center justify-center text-xl text-white cursor-pointer"
-          >
-            <FiTrash2 />
+          {/* total Price and Clear cart */}
+          <div className="flex flex-col gap-y-2 py-4 my4'">
+            <div className="flex justify-between items-center w-full  ">
+              {/* total */}
+              <div className="uppercase font-semibold text-primary">
+                <span className="mr-2">Total:</span>₹{Math.round(total)}
+              </div>
+              {/* Clear Cart */}
+              <div
+                onClick={clearAllCart}
+                className="w-10 h-10 py-2 bg-red-600 flex items-center justify-center text-xl text-white cursor-pointer"
+              >
+                <FiTrash2 />
+              </div>
+            </div>
+            <Link
+              to={`/`}
+              className="w-full bg-gray-300 flex justify-center items-center py-2 font-medium"
+            >
+              View Cart
+            </Link>
+            <Link
+              to={`/`}
+              className="w-full bg-primary text-white flex justify-center items-center py-2 font-medium"
+            >
+              Chcekout
+            </Link>
           </div>
-        </div>
-        <Link
-          to={`/`}
-          className="w-full bg-gray-300 flex justify-center items-center py-2 font-medium"
-        >
-          View Cart
-        </Link>
-        <Link
-          to={`/`}
-          className="w-full bg-primary text-white flex justify-center items-center py-2 font-medium"
-        >
-          Chcekout
-        </Link>
-      </div>
+        </>
+      ) : (
+        <>
+          <div className="h-[650px] shadow-lg flex flex-col justify-center items-center">
+            <div className="text-xl font-semibold">Your Cart is Empty</div>
+            <div className="text-xl">
+              <BsCart4 />
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
